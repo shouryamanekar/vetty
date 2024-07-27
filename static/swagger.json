@@ -1,0 +1,93 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "Vetty API",
+      "description": "API documentation for the Vetty cryptocurrency application."
+    },
+    "host": "localhost:5000",
+    "basePath": "/",
+    "schemes": ["http"],
+    "paths": {
+      "/coins": {
+        "get": {
+          "summary": "List all coins",
+          "responses": {
+            "200": {
+              "description": "A list of coins",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      },
+      "/categories": {
+        "get": {
+          "summary": "List all categories",
+          "responses": {
+            "200": {
+              "description": "A list of categories",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      },
+      "/coins/{coin_id}": {
+        "get": {
+          "summary": "Get a specific coin",
+          "parameters": [
+            {
+              "name": "coin_id",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Details of a specific coin",
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      },
+      "/health": {
+        "get": {
+          "summary": "Health check",
+          "responses": {
+            "200": {
+              "description": "Health status",
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      },
+      "/version": {
+        "get": {
+          "summary": "Version information",
+          "responses": {
+            "200": {
+              "description": "Version information",
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
